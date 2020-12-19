@@ -6,7 +6,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CitySearchComponent } from './components/city-search/city-search.component';
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
   imports: [
     BrowserModule,
     MatAutocompleteModule,
-    AutocompleteLibModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
