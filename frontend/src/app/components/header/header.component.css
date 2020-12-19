@@ -1,0 +1,18 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  background-color: #2e4370;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar-label {
+  padding-left: 20px;
+  font-family: Tahoma;
+  font-size: large;
+}
