@@ -8,13 +8,13 @@ import java.util.Objects;
  */
 public class WeatherInfo {
     private final int temperature;
-    private final String city;
+    private final String cityName;
     private final String country;
     private final int weatherCode;
 
-    public WeatherInfo(String city, String country, int temperature, int weatherCode) {
+    public WeatherInfo(String cityName, String country, int temperature, int weatherCode) {
         this.temperature = temperature;
-        this.city = city;
+        this.cityName = cityName;
         this.country = country;
         this.weatherCode = weatherCode;
     }
@@ -23,8 +23,8 @@ public class WeatherInfo {
         return temperature;
     }
 
-    public String getCity() {
-        return city;
+    public String getCityName() {
+        return cityName;
     }
 
     public String getCountry() {
@@ -40,19 +40,19 @@ public class WeatherInfo {
         if (this == o) return true;
         if (!(o instanceof WeatherInfo)) return false;
         WeatherInfo that = (WeatherInfo) o;
-        return temperature == that.temperature && weatherCode == that.weatherCode && Objects.equals(city, that.city) && Objects.equals(country, that.country);
+        return temperature == that.temperature && weatherCode == that.weatherCode && Objects.equals(cityName, that.cityName) && Objects.equals(country, that.country);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(temperature, city, country, weatherCode);
+        return Objects.hash(temperature, cityName, country, weatherCode);
     }
 
     @Override
     public String toString() {
         return "WeatherInfo{" +
                 "temperature=" + temperature +
-                ", city='" + city + '\'' +
+                ", city='" + cityName + '\'' +
                 ", country='" + country + '\'' +
                 ", weatherCode=" + weatherCode +
                 '}';
