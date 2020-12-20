@@ -35,10 +35,7 @@
   background-color: #6aaee5 !important;
 }
 ::ng-deep .mat-icon{
-  /*padding-top: 3px !important;*/
-  /*height:38px !important;*/
-  /*width:38px !important;*/
   padding: 0.35em 0px !important;
-  /*border-radius: 1px;*/
-  /*transform: scale(.79) !important;*/
 }
+
+.mat-icon-button ::ng-deep .mat-button-focus-overlay { display: none; }
