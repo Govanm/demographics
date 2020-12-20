@@ -14,13 +14,13 @@
         </mat-autocomplete>
         <mat-icon aria-hidden="true" [ngStyle]="{'color':'#e6dde2'}" matPrefix>place</mat-icon>
       </mat-form-field>
-      <button class="search-button" mat-button mat-icon-button type="button" onclick="this.blur()"
+      <button class="search-button" type="button" onclick="this.blur()"
               (click)="addCity();selectedCityName.value=''">
         <mat-icon [ngStyle]="{'color':'white'}"><i class="material-icons">add</i></mat-icon>
       </button>
     </div>
   </div>
-  <div class="searchresult">
+  <div class="search-result">
 
   </div>
 </div>
