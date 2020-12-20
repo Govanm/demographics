@@ -21,15 +21,24 @@
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   background-color: #f8fafa;
-  border-radius: 5px;
+  border-radius: 1px;
 }
 
-::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-label { margin-top:-15px; }
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.45em 0px !important;}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-label { margin-top:-13px; }
 ::ng-deep label.ng-star-inserted { transform: translateY(-0.59375em) scale(.75) !important; }
 
-::ng-deep .mat-icon{
-  height:39px !important;
-  width:39px !important;
+.search-button{
+  border-radius: 18px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #6aaee5 !important;
 }
-
+::ng-deep .mat-icon{
+  /*padding-top: 3px !important;*/
+  /*height:38px !important;*/
+  /*width:38px !important;*/
+  padding: 0.35em 0px !important;
+  /*border-radius: 1px;*/
+  /*transform: scale(.79) !important;*/
+}

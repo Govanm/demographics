@@ -1,5 +1,6 @@
 <div class="city-search-content">
   <p class="city-search-label">How's the weather in...</p>
+  <div class="search-row">
   <mat-form-field class="search-form" [style.width.px]=250 appearance="outline">
     <div layout="row">
       <input matInput
@@ -13,7 +14,8 @@
     </mat-autocomplete>
   </mat-form-field>
   <button class="search-button" #searchButton mat-button mat-icon-button type="button">
-    <mat-icon class="search-icon"></mat-icon>
+    <mat-icon [ngStyle]="{'color':'white'}"><i class="material-icons">add</i></mat-icon>
   </button>
+  </div>
 
 </div>
