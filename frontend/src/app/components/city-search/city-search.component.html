@@ -2,16 +2,15 @@
   <p class="city-search-label">How's the weather in...</p>
   <div class="search-row">
   <mat-form-field class="search-form" [style.width.px]=250 appearance="outline">
-    <div layout="row">
       <input matInput
              class="city-input"
              placehoder="Stockholm"
              [formControl]="searchControl"
              [matAutocomplete]="auto">
-    </div>
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let city of filteredCities |async | slice:0:20 " [value]="city"> {{city}}</mat-option>
     </mat-autocomplete>
+    <mat-icon aria-hidden="true" [ngStyle]="{'color':'#e6dde2'}"  matPrefix>place</mat-icon>
   </mat-form-field>
   <button class="search-button" #searchButton mat-button mat-icon-button type="button">
     <mat-icon [ngStyle]="{'color':'white'}"><i class="material-icons">add</i></mat-icon>

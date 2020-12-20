@@ -38,4 +38,4 @@
   padding: 0.35em 0px !important;
 }
 
-.mat-icon-button ::ng-deep .mat-button-focus-overlay { display: none; }
+.search-button ::ng-deep .mat-button-focus-overlay { display: none; }
