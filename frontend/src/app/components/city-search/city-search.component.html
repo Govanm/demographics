@@ -21,6 +21,9 @@
     </div>
   </div>
   <div class="search-result">
-
+    <div class="card" *ngFor="let city of searchResult">
+      <p>{{city.temperature}}</p>
+      <span>{{city.cityName}}, {{city.country}}</span>
+    </div>
   </div>
 </div>
