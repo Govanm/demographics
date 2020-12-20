@@ -41,4 +41,8 @@ export class CitySearchComponent implements OnInit {
     this.selectedCity = selectedCity;
     console.log('City has been selected ' +  selectedCity);
   }
+
+  addCity(): void {
+    this.selectedCity = '';
+  }
 }

@@ -1,20 +1,21 @@
 <div class="city-search-content">
   <p class="city-search-label">How's the weather in...</p>
   <div class="search-row">
-  <mat-form-field class="search-form" [style.width.px]=250 appearance="outline">
+    <mat-form-field class="search-form" [style.width.px]=250 appearance="outline">
       <input matInput
              class="city-input"
              placehoder="Stockholm"
              [formControl]="searchControl"
-             [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete" (optionSelected)='selectCity($event.option.value)'>
-      <mat-option *ngFor="let city of filteredCities |async | slice:0:20 " [value]="city"> {{city}}</mat-option>
-    </mat-autocomplete>
-    <mat-icon aria-hidden="true" [ngStyle]="{'color':'#e6dde2'}"  matPrefix>place</mat-icon>
-  </mat-form-field>
-  <button class="search-button" #searchButton mat-button mat-icon-button type="button" onclick="this.blur()">
-    <mat-icon [ngStyle]="{'color':'white'}"><i class="material-icons">add</i></mat-icon>
-  </button>
+             [matAutocomplete]="auto"
+             [ngModel]="selectedCity">
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)='selectCity($event.option.value)'>
+        <mat-option *ngFor="let city of filteredCities |async | slice:0:20 " [value]="city"> {{city}}</mat-option>
+      </mat-autocomplete>
+      <mat-icon aria-hidden="true" [ngStyle]="{'color':'#e6dde2'}" matPrefix>place</mat-icon>
+    </mat-form-field>
+    <button class="search-button" #searchButton mat-button mat-icon-button type="button" onclick="this.blur()" (click)="addCity()">
+      <mat-icon [ngStyle]="{'color':'white'}"><i class="material-icons">add</i></mat-icon>
+    </button>
   </div>
 
 </div>
