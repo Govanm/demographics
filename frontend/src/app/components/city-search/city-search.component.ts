@@ -11,6 +11,7 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./city-search.component.css']
 })
 export class CitySearchComponent implements OnInit {
+  selectedCity = '';
   searchControl = new FormControl();
   filteredCities: Observable<string[]>;
   cities: string[] = cityList;
@@ -34,5 +35,10 @@ export class CitySearchComponent implements OnInit {
 
   private _normalizeValue(selectedCityName: string): string {
     return selectedCityName.toLowerCase().replace(/\s/g, '');
+  }
+
+  selectCity(selectedCity: string): void {
+    this.selectedCity = selectedCity;
+    console.log('City has been selected ' +  selectedCity);
   }
 }

@@ -7,12 +7,12 @@
              placehoder="Stockholm"
              [formControl]="searchControl"
              [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)='selectCity($event.option.value)'>
       <mat-option *ngFor="let city of filteredCities |async | slice:0:20 " [value]="city"> {{city}}</mat-option>
     </mat-autocomplete>
     <mat-icon aria-hidden="true" [ngStyle]="{'color':'#e6dde2'}"  matPrefix>place</mat-icon>
   </mat-form-field>
-  <button class="search-button" #searchButton mat-button mat-icon-button type="button">
+  <button class="search-button" #searchButton mat-button mat-icon-button type="button" onclick="this.blur()">
     <mat-icon [ngStyle]="{'color':'white'}"><i class="material-icons">add</i></mat-icon>
   </button>
   </div>
