@@ -46,6 +46,7 @@ export class CitySearchComponent implements OnInit {
   }
 
   addCity(): void {
+    this.searchResult = this.searchResult.filter( city => this.selectedCity !== city.cityName);
     this.weatherService.getWeatherForCity(this.selectedCity).subscribe(newCity => {
         this.searchResult.push(newCity);
       }
@@ -61,14 +62,14 @@ export class CitySearchComponent implements OnInit {
     return iconName.toLowerCase();
   }
 
-  delete(city: City): void {
-      // this.searchResult
+  delete(selectedCity: City): void {
+      this.searchResult = this.searchResult.filter( city => selectedCity.cityName !== city.cityName);
   }
 
   getColor(weatherCode: number): string {
     const iconName = WeatherCode[weatherCode].toLowerCase();
     if (iconName.includes('sunny')){
-      return '#e4e58c';
+      return '#ccce5a';
     } else if (iconName.includes('cloud') || iconName.includes('overcast')){
       return '#807f85';
     } else if (iconName.includes('rain') || iconName.includes('dizzle')) {
