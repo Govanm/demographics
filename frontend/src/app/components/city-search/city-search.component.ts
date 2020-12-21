@@ -62,7 +62,7 @@ export class CitySearchComponent implements OnInit {
   }
 
   delete(city: City): void {
-
+      // this.searchResult
   }
 
   getColor(weatherCode: number): string {

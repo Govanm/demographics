@@ -105,6 +105,7 @@ mat-form-field ::ng-deep .mat-icon{
 .city-weather-info{
   width:120px;
   max-width:120px;
+  color:white;
 }
 
 .city-name {
@@ -137,4 +138,5 @@ img.celsius{
 span.temperature{
   font-size: xx-large;
   font-weight: bolder;
+
 }
