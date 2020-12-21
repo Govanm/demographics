@@ -1,5 +1,6 @@
 package com.scania.demographics.domains;
 
+
 import java.util.Objects;
 
 /**

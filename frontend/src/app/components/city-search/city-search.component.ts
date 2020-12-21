@@ -5,6 +5,7 @@ import cityList from '../../../assets/city.list.json';
 import {map, startWith} from 'rxjs/operators';
 import {City} from '../../city';
 import {FormControl} from '@angular/forms';
+import {WeatherCode} from '../../weather-code';
 
 @Component({
   selector: 'app-city-search',
@@ -50,5 +51,13 @@ export class CitySearchComponent implements OnInit {
       }
     );
     this.selectedCity = '';
+  }
+
+  getIconName(weatherCode: number): string {
+    return WeatherCode[weatherCode].toLowerCase();
+  }
+
+  delete(city: City): void {
+
   }
 }

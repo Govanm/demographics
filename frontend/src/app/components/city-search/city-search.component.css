@@ -5,7 +5,7 @@
   font-family: Tahoma, serif;
 }
 .weather-info-content{
-  max-width: 600px;
+  max-width: 680px;
   text-align: center;
   margin-top: 80px;
 }
@@ -39,7 +39,10 @@
   -webkit-border-radius: 5px;
   background-color: #6aaee5 !important;
 }
-::ng-deep .mat-icon{
+button.search-button ::ng-deep .mat-icon{
+  padding: 0.35em 0 !important;
+}
+mat-form-field ::ng-deep .mat-icon{
   padding: 0.35em 0 !important;
 }
 
@@ -48,15 +51,15 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  width: 600px;
+  width: 680px;
 }
 
 .card {
   border-radius: 4px;
   border: 1px solid #eee;
   background-color: #fafafa;
-  height: 40px;
-  width: 150px;
+  height: 55px;
+  width: 160px;
   margin: 0 8px 16px;
   padding: 16px;
   display: flex;
@@ -92,4 +95,45 @@
 
 .card.card.highlight-card span {
   margin-left: 60px;
+}
+
+.weather-icon{
+  width:48px;
+  height:48px;
+}
+.city-weather-info{
+  width:120px;
+  max-width:120px;
+}
+
+.city-name {
+  display: inline-block;
+  max-width: 120px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 16px  ;
+}
+
+button.remove-city {
+  position: relative;
+  left: 62px;
+  top: 6px;
+  padding:0;
+  border:none;
+  background-color: inherit;
+}
+button.remove-city:focus{
+  border: none;
+  outline: none;
+}
+img.celsius{
+  width:20px;
+  height:20px;
+  padding-bottom: 10px;
+}
+
+span.temperature{
+  font-size: xx-large;
+  font-weight: bolder;
 }

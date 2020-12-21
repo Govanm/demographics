@@ -22,8 +22,20 @@
   </div>
   <div class="search-result">
     <div class="card" *ngFor="let city of searchResult">
-      <p>{{city.temperature}}</p>
-      <span>{{city.cityName}}, {{city.country}}</span>
+      <img alt="Weather Status" class="weather-icon"
+           src="../../../assets/img/weather_icons/{{getIconName(city.weatherCode)}}.svg">
+      <div class="city-weather-info">
+        <button class="remove-city" type="button" onclick="this.blur()"
+                (click)="delete(city);">
+          <mat-icon aria-hidden="true" [ngStyle]="{'color':'white'}" matSuffix>cancel</mat-icon>
+        </button>
+        <div>
+          <span class="temperature">{{city.temperature}}</span>
+          <img alt="Celsius" class="celsius"
+               src="../../../assets/img/weather_icons/celsius.svg">
+        </div>
+        <label title="{{city.cityName}}, {{city.country}}" class="city-name">{{city.cityName}}, {{city.country}}</label>
+      </div>
     </div>
   </div>
 </div>
