@@ -98,6 +98,7 @@ mat-form-field ::ng-deep .mat-icon{
 }
 
 .weather-icon{
+  border:none;
   width:48px;
   height:48px;
 }

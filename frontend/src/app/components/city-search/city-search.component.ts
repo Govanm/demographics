@@ -54,10 +54,27 @@ export class CitySearchComponent implements OnInit {
   }
 
   getIconName(weatherCode: number): string {
-    return WeatherCode[weatherCode].toLowerCase();
+    const iconName = WeatherCode[weatherCode];
+    if (iconName === undefined){
+      return 'na';
+    }
+    return iconName.toLowerCase();
   }
 
   delete(city: City): void {
 
+  }
+
+  getColor(weatherCode: number): string {
+    const iconName = WeatherCode[weatherCode].toLowerCase();
+    if (iconName.includes('sunny')){
+      return '#e4e58c';
+    } else if (iconName.includes('cloud') || iconName.includes('overcast')){
+      return '#807f85';
+    } else if (iconName.includes('rain') || iconName.includes('dizzle')) {
+      return '#6bafe3';
+    } else {
+      return '#2c4370';
+    }
   }
 }

@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="search-result">
-    <div class="card" *ngFor="let city of searchResult">
+    <div class="card" *ngFor="let city of searchResult" [ngStyle]="{'backgroundColor':getColor(city.weatherCode)}">
       <img alt="Weather Status" class="weather-icon"
            src="../../../assets/img/weather_icons/{{getIconName(city.weatherCode)}}.svg">
       <div class="city-weather-info">
