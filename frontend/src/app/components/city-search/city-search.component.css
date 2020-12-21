@@ -1,7 +1,7 @@
 .city-search-content{
   display: inline-block;
-  min-width: 300px;
-  max-width: 320px;
+  min-width: 350px;
+  max-width: 350px;
   font-family: Tahoma, serif;
 }
 .weather-info-content{
