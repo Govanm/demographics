@@ -46,31 +46,36 @@ export class CitySearchComponent implements OnInit {
   }
 
   addCity(): void {
-    this.searchResult = this.searchResult.filter( city => this.selectedCity !== city.cityName);
     this.weatherService.getWeatherForCity(this.selectedCity).subscribe(newCity => {
+        this.searchResult = this.searchResult.filter(city => newCity.cityName !== city.cityName);
         this.searchResult.push(newCity);
       }
     );
     this.selectedCity = '';
+    this.filteredCities =
+      this.searchControl.valueChanges.pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
   }
 
   getIconName(weatherCode: number): string {
     const iconName = WeatherCode[weatherCode];
-    if (iconName === undefined){
+    if (iconName === undefined) {
       return 'na';
     }
     return iconName.toLowerCase();
   }
 
   delete(selectedCity: City): void {
-      this.searchResult = this.searchResult.filter( city => selectedCity.cityName !== city.cityName);
+    this.searchResult = this.searchResult.filter(city => selectedCity.cityName !== city.cityName);
   }
 
   getColor(weatherCode: number): string {
     const iconName = WeatherCode[weatherCode].toLowerCase();
-    if (iconName.includes('sunny')){
+    if (iconName.includes('sunny')) {
       return '#ccce5a';
-    } else if (iconName.includes('cloud') || iconName.includes('overcast')){
+    } else if (iconName.includes('cloud') || iconName.includes('overcast')) {
       return '#807f85';
     } else if (iconName.includes('rain') || iconName.includes('dizzle')) {
       return '#6bafe3';
