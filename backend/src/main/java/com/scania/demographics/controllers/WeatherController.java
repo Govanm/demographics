@@ -18,7 +18,7 @@ public class WeatherController {
     @Autowired
     WeatherService weatherService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://govanm.github.io" )
     @GetMapping("demographics")
     public WeatherInfo weatherInfo(@RequestParam(value = "city") String cityName) {
         WeatherQueryResult queryResult = weatherService.getWeatherResult(cityName);

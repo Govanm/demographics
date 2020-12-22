@@ -23,12 +23,7 @@ export class CitySearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.filteredCities =
-      this.searchControl.valueChanges.pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
+    this.resetAutoComplete();
   }
 
   private _filter(selectedCityName: string): string[] {
@@ -52,6 +47,10 @@ export class CitySearchComponent implements OnInit {
       }
     );
     this.selectedCity = '';
+    this.resetAutoComplete();
+  }
+
+    private resetAutoComplete(): void {
     this.filteredCities =
       this.searchControl.valueChanges.pipe(
         startWith(''),
